@@ -143,7 +143,7 @@
         -0.2,
         Math.sin(angle) * 0.39
       );
-      fin.rotation.y = -angle + Math.PI / 2;
+      fin.rotation.y = -angle;
       rocketGroup.add(fin);
 
       const finEdges = new THREE.EdgesGeometry(finGeo);
