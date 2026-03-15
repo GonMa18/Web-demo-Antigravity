@@ -11,9 +11,17 @@
   let particles = [];
   let mouseX = 0, mouseY = 0;
   let animId;
+  let linkColorRGB = '110, 180, 255';
+  let dotColorRGB = '255, 255, 255';
 
   const PARTICLE_COUNT = 120;
   const CONNECTION_DISTANCE = 150;
+
+  function updateThemeColors() {
+    const styles = getComputedStyle(document.documentElement);
+    linkColorRGB = styles.getPropertyValue('--particle-link-rgb').trim() || '110, 180, 255';
+    dotColorRGB = styles.getPropertyValue('--particle-dot-rgb').trim() || '255, 255, 255';
+  }
 
   function resize() {
     width = canvas.width = canvas.offsetWidth;
@@ -46,7 +54,7 @@
 
         if (dist < CONNECTION_DISTANCE) {
           const opacity = (1 - dist / CONNECTION_DISTANCE) * 0.08;
-          ctx.strokeStyle = `rgba(110, 180, 255, ${opacity})`;
+          ctx.strokeStyle = `rgba(${linkColorRGB}, ${opacity})`;
           ctx.lineWidth = 0.5;
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
@@ -85,7 +93,7 @@
       // Draw
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255, 255, 255, ${p.opacity})`;
+      ctx.fillStyle = `rgba(${dotColorRGB}, ${p.opacity})`;
       ctx.fill();
     });
 
@@ -102,6 +110,9 @@
     mouseX = e.clientX - rect.left;
     mouseY = e.clientY - rect.top;
   }, { passive: true });
+
+  updateThemeColors();
+  window.addEventListener('bisky:theme-change', updateThemeColors);
 
   // Only run when hero is visible
   const heroSection = document.querySelector('.hero');

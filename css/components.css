@@ -17,7 +17,7 @@
 }
 
 .navbar.scrolled {
-  background: rgba(0, 0, 0, 0.85);
+  background: var(--overlay-nav-scrolled);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: var(--border-subtle);
@@ -51,6 +51,8 @@
   display: block;
   height: clamp(20px, 2.2vw, 30px);
   width: auto;
+  filter: var(--logo-filter);
+  transition: filter var(--t-base) var(--ease-out);
 }
 
 .navbar__logo-mark {
@@ -73,6 +75,10 @@
 
 .navbar__item {
   position: relative;
+}
+
+.navbar__item--theme {
+  margin-left: var(--sp-2);
 }
 
 .navbar__link {
@@ -103,6 +109,45 @@
   transform: rotate(180deg);
 }
 
+.navbar__theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  padding: var(--sp-2) var(--sp-3);
+  border: 1px solid var(--surface-stroke-weak);
+  background: var(--surface-1);
+  color: var(--c-grey-400);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  border-radius: 999px;
+  transition: color var(--t-base) var(--ease-out),
+              border-color var(--t-base) var(--ease-out),
+              background var(--t-base) var(--ease-out),
+              transform var(--t-fast) var(--ease-out);
+}
+
+.navbar__theme-toggle:hover {
+  color: var(--c-white);
+  border-color: var(--surface-stroke-hover);
+  background: var(--surface-2);
+}
+
+.navbar__theme-toggle:active {
+  transform: translateY(1px);
+}
+
+.navbar__theme-toggle:focus-visible {
+  outline: 2px solid rgba(var(--accent-rgb), 0.45);
+  outline-offset: 2px;
+}
+
+.navbar__theme-toggle-label {
+  line-height: 1;
+}
+
 /* Dropdown */
 .navbar__dropdown {
   position: absolute;
@@ -110,7 +155,7 @@
   left: 50%;
   transform: translateX(-50%) translateY(8px);
   min-width: 200px;
-  background: rgba(13, 13, 13, 0.95);
+  background: var(--overlay-dropdown);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: var(--border-subtle);
@@ -140,7 +185,7 @@
 
 .navbar__dropdown-link:hover {
   color: var(--c-white);
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--surface-2);
 }
 
 /* ——————————————————————
@@ -174,6 +219,8 @@
   width: min(240px, 100%);
   height: auto;
   margin-bottom: var(--sp-4);
+  filter: var(--logo-filter);
+  transition: filter var(--t-base) var(--ease-out);
 }
 
 .footer__brand-name {
@@ -252,7 +299,7 @@
    —————————————————————— */
 .project-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--surface-1);
   border: var(--border-subtle);
   overflow: hidden;
   transition: all var(--t-slow) var(--ease-out);
@@ -262,8 +309,8 @@
 }
 
 .project-card:hover {
-  border-color: rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--surface-stroke-strong);
+  background: var(--surface-2);
   transform: translateY(-4px);
 }
 
@@ -279,7 +326,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+  background: linear-gradient(to top, var(--overlay-image-top), transparent);
 }
 
 .project-card__image-placeholder {
@@ -290,7 +337,7 @@
   justify-content: center;
   font-family: var(--font-mono);
   font-size: var(--fs-3xl);
-  color: rgba(255, 255, 255, 0.05);
+  color: var(--text-ghost);
   font-weight: var(--fw-bold);
 }
 
@@ -361,7 +408,7 @@
    —————————————————————— */
 .member-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--surface-1);
   border: var(--border-subtle);
   padding: var(--sp-6);
   text-align: center;
@@ -370,8 +417,8 @@
 }
 
 .member-card:hover {
-  border-color: rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--surface-stroke-strong);
+  background: var(--surface-2);
   transform: translateY(-4px);
 }
 
@@ -415,7 +462,7 @@
    —————————————————————— */
 .sponsor-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--surface-1);
   border: var(--border-subtle);
   padding: var(--sp-8);
   display: flex;
@@ -427,8 +474,8 @@
 }
 
 .sponsor-card:hover {
-  border-color: rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--surface-stroke-strong);
+  background: var(--surface-2);
 }
 
 .sponsor-card__name {
@@ -455,7 +502,7 @@
 .page-header__bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(110, 180, 255, 0.04) 0%, transparent 70%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(var(--accent-rgb), 0.05) 0%, transparent 70%);
 }
 
 .page-header .container {

@@ -74,7 +74,7 @@
 .project-detail__hero-placeholder {
   font-family: var(--font-mono);
   font-size: clamp(3rem, 6vw, 6rem);
-  color: rgba(255, 255, 255, 0.03);
+  color: var(--text-ghost-faint);
   font-weight: var(--fw-extrabold);
 }
 
@@ -156,7 +156,7 @@
 
 /* Specs sidebar */
 .project-detail__specs {
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--surface-1);
   border: var(--border-subtle);
   padding: var(--sp-8);
   position: sticky;

@@ -33,7 +33,7 @@
   text-transform: uppercase;
   color: var(--c-grey-600);
   padding: var(--sp-1) var(--sp-3);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--surface-stroke-weak);
 }
 
 .sponsor-tier__grid {
@@ -108,7 +108,7 @@
   position: fixed;
   inset: 0;
   z-index: var(--z-overlay);
-  background: rgba(0, 0, 0, 0.8);
+  background: var(--overlay-modal-backdrop);
   backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
@@ -190,7 +190,7 @@
 
 .sponsor-detail__link:hover {
   color: var(--c-white);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: var(--surface-stroke-hover);
 }
 
 /* CTA section */

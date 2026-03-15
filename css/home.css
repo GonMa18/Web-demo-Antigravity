@@ -33,8 +33,8 @@
   inset: 0;
   z-index: 2;
   background:
-    radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%),
-    linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.8) 100%);
+    radial-gradient(ellipse at 30% 50%, transparent 0%, var(--overlay-hero-radial) 100%),
+    linear-gradient(to bottom, transparent 60%, var(--overlay-hero-bottom) 100%);
   pointer-events: none;
 }
 
@@ -136,7 +136,7 @@
 }
 
 .home-about__stat {
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 1px solid var(--surface-stroke-weak);
   padding-left: var(--sp-6);
 }
 
@@ -173,7 +173,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+  background: linear-gradient(90deg, transparent, rgba(var(--divider-rgb), 0.06), transparent);
 }
 
 .home-projects__header {
@@ -195,7 +195,7 @@
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 0;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--surface-1);
   border: var(--border-subtle);
   overflow: hidden;
   transition: all var(--t-slow) var(--ease-out);
@@ -204,8 +204,8 @@
 }
 
 .home-projects__featured:hover {
-  border-color: rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--surface-stroke-strong);
+  background: var(--surface-2);
 }
 
 .home-projects__featured-image {
@@ -220,7 +220,7 @@
 .home-projects__featured-image-placeholder {
   font-family: var(--font-mono);
   font-size: clamp(3rem, 5vw, 5rem);
-  color: rgba(255, 255, 255, 0.04);
+  color: var(--text-ghost-soft);
   font-weight: var(--fw-bold);
 }
 
@@ -267,7 +267,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+  background: linear-gradient(90deg, transparent, rgba(var(--divider-rgb), 0.06), transparent);
 }
 
 .home-departments__grid {
@@ -278,7 +278,7 @@
 }
 
 .dept-card {
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--surface-1);
   border: var(--border-subtle);
   padding: var(--sp-10);
   transition: all var(--t-slow) var(--ease-out);
@@ -287,8 +287,8 @@
 }
 
 .dept-card:hover {
-  border-color: rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--surface-stroke-strong);
+  background: var(--surface-2);
   transform: translateY(-2px);
 }
 
@@ -331,7 +331,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+  background: linear-gradient(90deg, transparent, rgba(var(--divider-rgb), 0.06), transparent);
 }
 
 .home-team__header {
@@ -380,12 +380,12 @@
   font-weight: var(--fw-medium);
   color: var(--c-grey-500);
   transition: all var(--t-base);
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--surface-1);
 }
 
 .home-sponsors__logo:hover {
   color: var(--c-white);
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: var(--surface-stroke-hover);
 }
 
 .home-sponsors__cta {

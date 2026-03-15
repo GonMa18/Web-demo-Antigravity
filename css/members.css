@@ -11,7 +11,7 @@
 
 .year-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--surface-1);
   border: var(--border-subtle);
   padding: var(--sp-12);
   overflow: hidden;
@@ -24,8 +24,8 @@
 }
 
 .year-card:hover {
-  border-color: rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--surface-stroke-hover);
+  background: var(--surface-2);
   transform: translateY(-4px);
 }
 
@@ -76,7 +76,7 @@
   right: 0;
   width: 200px;
   height: 100%;
-  background: linear-gradient(135deg, transparent 40%, rgba(110, 180, 255, 0.03) 100%);
+  background: linear-gradient(135deg, transparent 40%, rgba(var(--accent-rgb), 0.05) 100%);
   pointer-events: none;
 }
 
@@ -212,7 +212,7 @@
 
 .member-profile__link:hover {
   color: var(--c-white);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: var(--surface-stroke-hover);
 }
 
 /* Content area */

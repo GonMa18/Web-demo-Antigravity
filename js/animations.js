@@ -75,6 +75,18 @@
   /* —— Cursor Glow (global subtle effect) —— */
   let mouseX = 0, mouseY = 0;
   let cursorGlow = null;
+  let cursorGlowRGB = '110, 180, 255';
+  let cursorGlowAlpha = '0.03';
+
+  function updateCursorGlowTheme() {
+    const styles = getComputedStyle(document.documentElement);
+    cursorGlowRGB = styles.getPropertyValue('--cursor-glow-rgb').trim() || '110, 180, 255';
+    cursorGlowAlpha = styles.getPropertyValue('--cursor-glow-alpha').trim() || '0.03';
+    if (cursorGlow) {
+      cursorGlow.style.background =
+        `radial-gradient(circle, rgba(${cursorGlowRGB}, ${cursorGlowAlpha}) 0%, transparent 70%)`;
+    }
+  }
 
   function createCursorGlow() {
     cursorGlow = document.createElement('div');
@@ -83,13 +95,13 @@
       width: 600px;
       height: 600px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(110,180,255,0.03) 0%, transparent 70%);
       pointer-events: none;
       z-index: 0;
       transform: translate(-50%, -50%);
       transition: opacity 0.3s;
     `;
     document.body.appendChild(cursorGlow);
+    updateCursorGlowTheme();
   }
 
   function updateCursorGlow() {
@@ -128,6 +140,7 @@
     createCursorGlow();
     updateCursorGlow();
     initParallax();
+    window.addEventListener('bisky:theme-change', updateCursorGlowTheme);
 
     // Start mutation observer on body to catch dynamically added content
     mutationObserver.observe(document.body, {
