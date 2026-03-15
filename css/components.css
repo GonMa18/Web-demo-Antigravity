@@ -47,6 +47,12 @@
   text-transform: uppercase;
 }
 
+.navbar__logo-img {
+  display: block;
+  height: clamp(20px, 2.2vw, 30px);
+  width: auto;
+}
+
 .navbar__logo-mark {
   width: 32px;
   height: 32px;
@@ -161,6 +167,13 @@
 
 .footer__brand {
   max-width: 300px;
+}
+
+.footer__brand-logo {
+  display: block;
+  width: min(240px, 100%);
+  height: auto;
+  margin-bottom: var(--sp-4);
 }
 
 .footer__brand-name {
