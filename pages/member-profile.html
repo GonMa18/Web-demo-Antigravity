@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfil — BiSKY Team</title>
-  <meta name="description" content="Perfil de miembro de BiSKY Team.">
+  <title>Profile — BiSKY Team</title>
+  <meta name="description" content="BiSKY Team member profile.">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/members.css">
@@ -27,22 +27,26 @@
         </li>
         <li class="navbar__item">
           <a href="members.html" class="navbar__link active">
-            Miembros <span class="navbar__link-arrow">▾</span>
+            Members <span class="navbar__link-arrow">▾</span>
           </a>
           <div class="navbar__dropdown">
-            <a href="members-year.html?year=2025" class="navbar__dropdown-link">Año 2025</a>
-            <a href="members-year.html?year=2024" class="navbar__dropdown-link">Año 2024</a>
-            <a href="members-year.html?year=2023" class="navbar__dropdown-link">Año 2023</a>
+            <a href="members-year.html?year=25-26" class="navbar__dropdown-link">25-26</a>
+            <a href="members-year.html?year=24-25" class="navbar__dropdown-link">24-25</a>
+            <a href="members-year.html?year=23-24" class="navbar__dropdown-link">23-24</a>
+            <a href="members-year.html?year=22-23" class="navbar__dropdown-link">22-23</a>
+            <a href="members-year.html?year=21-22" class="navbar__dropdown-link">21-22</a>
+            <a href="members-year.html?year=19-20" class="navbar__dropdown-link">19-20</a>
           </div>
         </li>
         <li class="navbar__item">
           <a href="projects.html" class="navbar__link">
-            Proyectos <span class="navbar__link-arrow">▾</span>
+            Projects <span class="navbar__link-arrow">▾</span>
           </a>
           <div class="navbar__dropdown">
-            <a href="projects.html#rockets" class="navbar__dropdown-link">Cohetes</a>
-            <a href="projects.html#motors" class="navbar__dropdown-link">Motores</a>
-            <a href="projects.html#launch-rails" class="navbar__dropdown-link">Launch Rails</a>
+            <a href="projects.html#rockets" class="navbar__dropdown-link">Rockets</a>
+            <a href="projects.html#engines" class="navbar__dropdown-link">Engines</a>
+            <a href="projects.html#infrastructures" class="navbar__dropdown-link">Infrastructures</a>
+            <a href="projects.html#rd" class="navbar__dropdown-link">R&D</a>
           </div>
         </li>
         <li class="navbar__item">
@@ -56,7 +60,9 @@
     <section class="member-profile">
       <div class="container">
         <nav class="breadcrumb">
-          <a href="members.html">Miembros</a>
+          <a href="members.html">Members</a>
+          <span class="breadcrumb__sep">/</span>
+          <span id="breadcrumb-year-link"></span>
           <span class="breadcrumb__sep">/</span>
           <span id="breadcrumb-name">—</span>
         </nav>
@@ -72,40 +78,39 @@
       <div class="footer__top">
         <div class="footer__brand">
           <div class="footer__brand-name">BiSKY Team</div>
-          <p class="footer__brand-desc">Equipo universitario de cohetería experimental de la UPV/EHU. Reaching beyond the sky.</p>
+          <p class="footer__brand-desc">University rocketry team at UPV/EHU. Reaching beyond the sky.</p>
         </div>
         <div>
-          <div class="footer__col-title">Navegación</div>
+          <div class="footer__col-title">Navigation</div>
           <div class="footer__col-links">
             <a href="../index.html" class="footer__col-link">Home</a>
-            <a href="members.html" class="footer__col-link">Miembros</a>
-            <a href="projects.html" class="footer__col-link">Proyectos</a>
+            <a href="members.html" class="footer__col-link">Members</a>
+            <a href="projects.html" class="footer__col-link">Projects</a>
             <a href="sponsors.html" class="footer__col-link">Sponsors</a>
           </div>
         </div>
         <div>
-          <div class="footer__col-title">Proyectos</div>
+          <div class="footer__col-title">Projects</div>
           <div class="footer__col-links">
-            <a href="projects.html#rockets" class="footer__col-link">Cohetes</a>
-            <a href="projects.html#motors" class="footer__col-link">Motores</a>
-            <a href="projects.html#launch-rails" class="footer__col-link">Launch Rails</a>
+            <a href="projects.html#rockets" class="footer__col-link">Rockets</a>
+            <a href="projects.html#engines" class="footer__col-link">Engines</a>
+            <a href="projects.html#infrastructures" class="footer__col-link">Infrastructures</a>
+            <a href="projects.html#rd" class="footer__col-link">R&D</a>
           </div>
         </div>
         <div>
-          <div class="footer__col-title">Contacto</div>
+          <div class="footer__col-title">Contact</div>
           <div class="footer__col-links">
-            <a href="#" class="footer__col-link">contact@biskyteam.com</a>
+            <a href="mailto:contact@biskyteam.com" class="footer__col-link">contact@biskyteam.com</a>
             <a href="#" class="footer__col-link">UPV/EHU, Bilbao</a>
           </div>
         </div>
       </div>
       <div class="footer__bottom">
-        <span class="footer__copy">© 2025 BiSKY Team. UPV/EHU.</span>
+        <span class="footer__copy">© 2026 BiSKY Team. UPV/EHU.</span>
         <div class="footer__social">
-          <a href="#" class="footer__social-link">Instagram</a>
-          <a href="#" class="footer__social-link">LinkedIn</a>
-          <a href="#" class="footer__social-link">YouTube</a>
-          <a href="#" class="footer__social-link">GitHub</a>
+          <a href="https://www.instagram.com/bisky_team/" class="footer__social-link" target="_blank">Instagram</a>
+          <a href="https://www.linkedin.com/company/bisky-team/" class="footer__social-link" target="_blank">LinkedIn</a>
         </div>
       </div>
     </div>
@@ -118,68 +123,162 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
-      const id = params.get('id');
-      const member = BISKY.getMemberById(id);
+      const memberName = params.get('name');
+      const yearKey = params.get('year') || '25-26';
 
-      if (!member) {
+      if (!memberName) {
         document.getElementById('profile-container').innerHTML =
-          '<p style="color: var(--c-grey-500);">Miembro no encontrado.</p>';
+          '<p style="color: var(--c-grey-500);">Member not found.</p>';
         return;
       }
 
-      document.title = `${member.name} — BiSKY Team`;
-      document.getElementById('breadcrumb-name').textContent = member.name;
+      // Set breadcrumb
+      const bcYearLink = document.getElementById('breadcrumb-year-link');
+      bcYearLink.innerHTML = `<a href="members-year.html?year=${yearKey}">${yearKey}</a>`;
+      document.getElementById('breadcrumb-name').textContent = memberName;
+      document.title = `${memberName} — BiSKY Team`;
 
-      const initials = member.name.split(' ').map(w => w[0]).join('').slice(0, 2);
-      const latestRecord = member.history[member.history.length - 1];
+      const imgBase = '../assets/members/';
+      const photoPath = BISKY.getMemberPhoto(memberName, imgBase);
+      const initials = memberName.split(' ').map(w => w[0]).join('').slice(0, 2);
+
+      // Find member info across all years
+      const memberYears = [];
+      BISKY.years.forEach(yKey => {
+        const yData = BISKY.getYearData(yKey);
+        if (!yData) return;
+
+        // Search in all sections
+        const searchIn = (list, dept) => {
+          if (!list) return;
+          list.forEach(m => {
+            if (m.name === memberName) {
+              memberYears.push({
+                year: yKey,
+                position: BISKY.getPositionName(m.position),
+                department: dept,
+                project: m.project || null
+              });
+            }
+          });
+        };
+
+        searchIn(yData.faculty, 'Faculty');
+        searchIn(yData.leadership, 'Leadership');
+        searchIn(yData.projectManagers, 'Leadership');
+
+        if (yData.departments) {
+          Object.entries(yData.departments).forEach(([deptName, deptData]) => {
+            if (deptData.chief === memberName) {
+              memberYears.push({
+                year: yKey,
+                position: 'Chief',
+                department: deptName,
+                project: null
+              });
+            }
+            if (deptData.members && deptData.members.includes(memberName)) {
+              memberYears.push({
+                year: yKey,
+                position: 'Team Member',
+                department: deptName,
+                project: null
+              });
+            }
+          });
+        }
+      });
+
+      // Deduplicate by year (keep first match which is highest role)
+      const seenYears = new Set();
+      const uniqueYears = memberYears.filter(my => {
+        if (seenYears.has(my.year)) return false;
+        seenYears.add(my.year);
+        return true;
+      });
+
+      // Current year info
+      const currentInfo = uniqueYears.find(my => my.year === yearKey) || uniqueYears[0] || {};
+
+      const avatarContent = photoPath 
+        ? `<img src="${photoPath}" alt="${memberName}" loading="lazy">` 
+        : initials;
+
+      const roleLabel = currentInfo.project 
+        ? `${currentInfo.position} — ${currentInfo.project}` 
+        : currentInfo.position || 'Member';
+
+      // Generate bio
+      const bio = generateBio(memberName, currentInfo);
 
       const container = document.getElementById('profile-container');
       container.innerHTML = `
         <!-- Sidebar -->
         <aside class="member-profile__sidebar">
-          <div class="member-profile__avatar">${initials}</div>
-          <h1 class="member-profile__name">${member.name}</h1>
-          <p class="member-profile__role">${BISKY.getPositionName(latestRecord.pos)}</p>
-          <p class="member-profile__department">${BISKY.getDepartmentName(latestRecord.dept)}</p>
-          <div class="member-profile__links">
-            ${member.linkedin ? `<a href="${member.linkedin}" class="member-profile__link" target="_blank">LinkedIn →</a>` : ''}
-          </div>
+          <div class="member-profile__avatar">${avatarContent}</div>
+          <h1 class="member-profile__name">${memberName}</h1>
+          <p class="member-profile__role">${roleLabel}</p>
+          <p class="member-profile__department">${currentInfo.department || ''}</p>
         </aside>
 
         <!-- Content -->
         <div class="member-profile__content">
 
           <div class="member-profile__section">
-            <h2 class="member-profile__section-title">Biografía</h2>
-            <p class="member-profile__bio">${member.bio}</p>
+            <h2 class="member-profile__section-title">About</h2>
+            <p class="member-profile__bio">${bio}</p>
           </div>
 
+          ${uniqueYears.length > 0 ? `
           <div class="member-profile__section">
-            <h2 class="member-profile__section-title">Años en el equipo</h2>
+            <h2 class="member-profile__section-title">Years in the team</h2>
             <div class="member-profile__years">
-              ${member.years.map(y => `
-                <a href="members-year.html?year=${y}" class="member-profile__year-badge">${y}</a>
+              ${uniqueYears.map(my => `
+                <a href="members-year.html?year=${my.year}" class="member-profile__year-badge ${my.year === yearKey ? 'active' : ''}">${my.year}</a>
               `).join('')}
             </div>
           </div>
+          ` : ''}
 
+          ${uniqueYears.length > 0 ? `
           <div class="member-profile__section">
-            <h2 class="member-profile__section-title">Trayectoria</h2>
+            <h2 class="member-profile__section-title">History</h2>
             <div class="member-history">
-              ${member.history.slice().reverse().map(h => `
+              ${uniqueYears.map(my => `
                 <div class="member-history__item">
-                  <div class="member-history__year">${h.year}</div>
+                  <div class="member-history__year">${my.year}</div>
                   <div class="member-history__info">
-                    <span class="member-history__pos">${BISKY.getPositionName(h.pos)}</span>
-                    <span class="member-history__dept">${BISKY.getDepartmentName(h.dept)}</span>
+                    <span class="member-history__pos">${my.project ? my.position + ' — ' + my.project : my.position}</span>
+                    <span class="member-history__dept">${my.department}</span>
                   </div>
                 </div>
               `).join('')}
             </div>
           </div>
+          ` : ''}
 
         </div>
       `;
+
+      function generateBio(name, info) {
+        const firstName = name.split(' ')[0];
+        if (info.position === 'Faculty Advisor') {
+          return `${name} serves as Faculty Advisor for BiSKY Team, providing academic guidance and institutional support for the team's aerospace research and development activities at UPV/EHU.`;
+        }
+        if (info.position === 'Team Leader') {
+          return `${firstName} leads BiSKY Team as Team Leader, coordinating all departments and driving the team's mission to develop suborbital space launchers.`;
+        }
+        if (info.position === 'Financial Manager') {
+          return `${firstName} manages the financial operations and sponsorship strategy of BiSKY Team, ensuring sustainable funding for the team's aerospace projects.`;
+        }
+        if (info.position === 'Project Manager' && info.project) {
+          return `${firstName} serves as Project Manager for the ${info.project} project, overseeing its design, development, and execution within BiSKY Team.`;
+        }
+        if (info.position === 'Chief') {
+          return `${firstName} leads the ${info.department} department as Chief, guiding technical decisions and coordinating the team's work in this area.`;
+        }
+        return `${firstName} is a member of BiSKY Team's ${info.department || 'technical'} team, contributing to the design and development of suborbital rockets and propulsion systems.`;
+      }
     });
   </script>
 </body>

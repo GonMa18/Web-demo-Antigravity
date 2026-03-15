@@ -1,147 +1,537 @@
 /**
  * BiSKY Team — Central Data Store
- * All placeholder data for the demo. Replace with real data when ready.
+ * Real data sourced from the official BiSKY Team website (biskyteam.com)
  */
 
 const BISKY = {
   team: {
     name: 'BiSKY Team',
     tagline: 'Reaching beyond the sky',
+    mission: 'Desarrollar lanzadores espaciales suborbitales capaces de alcanzar los 100 km de altura para transportar microexperimentos o cubesats.',
     university: 'Universidad del País Vasco / Euskal Herriko Unibertsitatea',
     universityShort: 'UPV/EHU',
-    founded: 2022,
+    founded: 2019,
     location: 'Bilbao, País Vasco',
-    description: 'Equipo universitario de cohetería experimental de la UPV/EHU. Diseñamos, construimos y lanzamos cohetes de sondeo, desarrollando tecnología aeroespacial desde la universidad.',
+    description: 'BiSKY Team es el equipo de cohetería de la UPV/EHU. Diseñamos, construimos y lanzamos cohetes suborbitales utilizando tecnología de propulsión híbrida. Formamos la próxima generación de científicos e ingenieros espaciales.',
+    descriptionLong: 'BiSKY Team desarrolla lanzadores espaciales suborbitales con el objetivo de alcanzar 100 km de altura. Utilizamos tecnología de propulsión híbrida — oxidante líquido combinado con combustible sólido — una solución más segura que permite reencendido y recuperación. Seguimos dos líneas de investigación: cohetes de combustión sólida para pruebas electrónicas y bancos de ensayo para tecnología híbrida.',
     email: 'contact@biskyteam.com',
     social: {
-      instagram: '#',
-      linkedin: '#',
+      instagram: 'https://www.instagram.com/bisky_team/',
+      linkedin: 'https://www.linkedin.com/company/bisky-team/',
       youtube: '#',
       github: '#'
     }
   },
 
   departments: [
-    { id: 'propulsion', name: 'Propulsión', icon: '⊘' },
-    { id: 'structures', name: 'Estructuras', icon: '⊞' },
-    { id: 'avionics', name: 'Aviónica', icon: '⊡' },
-    { id: 'recovery', name: 'Recuperación', icon: '⊙' },
-    { id: 'aerodynamics', name: 'Aerodinámica', icon: '⊗' },
-    { id: 'operations', name: 'Operaciones', icon: '⊕' }
+    { id: 'aerostructure', name: 'Aerostructure', icon: '◈' },
+    { id: 'avionics', name: 'Avionics', icon: '⊡' },
+    { id: 'propulsion', name: 'Propulsion', icon: '⊘' },
+    { id: 'recovery', name: 'Recovery', icon: '⊙' },
+    { id: 'manufacturing', name: 'Manufacturing', icon: '⊞' },
+    { id: 'business', name: 'Business & Legal', icon: '◇' },
+    { id: 'board', name: 'Board / Management', icon: '⊕' },
+    { id: 'logistics', name: 'Logistics', icon: '⊗' },
+    { id: 'pr', name: 'PR & Communication', icon: '◎' },
+    { id: 'structure', name: 'Structure', icon: '⊞' },
+    { id: 'aerodynamics-recovery', name: 'Aerodynamics & Recovery', icon: '◈' },
+    { id: 'flight-control', name: 'Flight Control & Simulation', icon: '⊡' },
+    { id: 'business-management', name: 'Business & Management', icon: '◇' },
+    { id: 'operations', name: 'Operations', icon: '⊕' }
   ],
 
   positions: [
+    { id: 'faculty', name: 'Faculty Advisor', order: 0 },
     { id: 'team-leader', name: 'Team Leader', order: 1 },
     { id: 'financial-manager', name: 'Financial Manager', order: 2 },
     { id: 'project-manager', name: 'Project Manager', order: 3 },
     { id: 'chief', name: 'Chief', order: 4 },
     { id: 'technical', name: 'Technical', order: 5 },
-    { id: 'member', name: 'Member', order: 6 },
-    { id: 'faculty', name: 'Faculty Advisor', order: 7 }
+    { id: 'member', name: 'Team Member', order: 6 }
   ],
 
-  years: [2025, 2024, 2023],
+  // Academic years using start year: "25-26" => key "2526"
+  years: ['25-26', '24-25', '23-24', '22-23', '21-22', '19-20'],
 
-  members: [
-    // — 2025 —
-    { id: 1, name: 'Ander Etxeberria', position: 'team-leader', department: 'operations', years: [2023, 2024, 2025], image: null, linkedin: '#', bio: 'Líder del equipo desde 2025. Ingeniero mecánico con experiencia en gestión de proyectos aeroespaciales universitarios.', history: [{ year: 2023, dept: 'structures', pos: 'member' }, { year: 2024, dept: 'structures', pos: 'chief' }, { year: 2025, dept: 'operations', pos: 'team-leader' }] },
-    { id: 2, name: 'Maialen Aguirre', position: 'financial-manager', department: 'operations', years: [2024, 2025], image: null, linkedin: '#', bio: 'Responsable financiera del equipo. Estudiante de ADE e Ingeniería Industrial.', history: [{ year: 2024, dept: 'operations', pos: 'member' }, { year: 2025, dept: 'operations', pos: 'financial-manager' }] },
-    { id: 3, name: 'Unai Zabala', position: 'project-manager', department: 'propulsion', years: [2023, 2024, 2025], image: null, linkedin: '#', bio: 'Project Manager de propulsión. Especializado en motores de propelente sólido.', history: [{ year: 2023, dept: 'propulsion', pos: 'member' }, { year: 2024, dept: 'propulsion', pos: 'technical' }, { year: 2025, dept: 'propulsion', pos: 'project-manager' }] },
-    { id: 4, name: 'Leire Mendizabal', position: 'project-manager', department: 'structures', years: [2024, 2025], image: null, linkedin: '#', bio: 'Project Manager de estructuras. Ingeniería de materiales compuestos aplicados a aeroespacial.', history: [{ year: 2024, dept: 'structures', pos: 'technical' }, { year: 2025, dept: 'structures', pos: 'project-manager' }] },
-    { id: 5, name: 'Mikel Arana', position: 'chief', department: 'avionics', years: [2023, 2024, 2025], image: null, linkedin: '#', bio: 'Chief de aviónica. Diseño de sistemas electrónicos de vuelo y telemetría.', history: [{ year: 2023, dept: 'avionics', pos: 'member' }, { year: 2024, dept: 'avionics', pos: 'technical' }, { year: 2025, dept: 'avionics', pos: 'chief' }] },
-    { id: 6, name: 'Nerea Goikoetxea', position: 'chief', department: 'recovery', years: [2024, 2025], image: null, linkedin: '#', bio: 'Chief de recuperación. Sistemas de despliegue de paracaídas y recuperación segura.', history: [{ year: 2024, dept: 'recovery', pos: 'technical' }, { year: 2025, dept: 'recovery', pos: 'chief' }] },
-    { id: 7, name: 'Jon Urrutia', position: 'chief', department: 'aerodynamics', years: [2024, 2025], image: null, linkedin: '#', bio: 'Chief de aerodinámica. CFD y optimización de perfiles aerodinámicos.', history: [{ year: 2024, dept: 'aerodynamics', pos: 'member' }, { year: 2025, dept: 'aerodynamics', pos: 'chief' }] },
-    { id: 8, name: 'Izaro Bilbao', position: 'chief', department: 'propulsion', years: [2024, 2025], image: null, linkedin: '#', bio: 'Chief de propulsión. Diseño y manufactura de granos de propelente.', history: [{ year: 2024, dept: 'propulsion', pos: 'member' }, { year: 2025, dept: 'propulsion', pos: 'chief' }] },
-    { id: 9, name: 'Aitor Larrea', position: 'technical', department: 'propulsion', years: [2025], image: null, linkedin: '#', bio: 'Técnico de propulsión. Bancos de ensayo y caracterización de motores.', history: [{ year: 2025, dept: 'propulsion', pos: 'technical' }] },
-    { id: 10, name: 'Garazi Iturbe', position: 'technical', department: 'structures', years: [2025], image: null, linkedin: '#', bio: 'Técnica de estructuras. Análisis FEA y fabricación con fibra de carbono.', history: [{ year: 2025, dept: 'structures', pos: 'technical' }] },
-    { id: 11, name: 'Julen Arrieta', position: 'technical', department: 'avionics', years: [2025], image: null, linkedin: '#', bio: 'Técnico de aviónica. Firmware de controladores de vuelo.', history: [{ year: 2025, dept: 'avionics', pos: 'technical' }] },
-    { id: 12, name: 'Amaia Zelaia', position: 'member', department: 'recovery', years: [2025], image: null, linkedin: '#', bio: 'Miembro del departamento de recuperación. Diseño de sistemas eyectores.', history: [{ year: 2025, dept: 'recovery', pos: 'member' }] },
-    { id: 13, name: 'Ibai Gaztañaga', position: 'member', department: 'aerodynamics', years: [2025], image: null, linkedin: '#', bio: 'Miembro de aerodinámica. Simulaciones CFD con OpenFOAM.', history: [{ year: 2025, dept: 'aerodynamics', pos: 'member' }] },
-    { id: 14, name: 'Oihane Ruiz', position: 'member', department: 'propulsion', years: [2025], image: null, linkedin: '#', bio: 'Miembro de propulsión. Investigación en composiciones de propelente.', history: [{ year: 2025, dept: 'propulsion', pos: 'member' }] },
-    { id: 15, name: 'Dr. Elena Martínez', position: 'faculty', department: 'operations', years: [2023, 2024, 2025], image: null, linkedin: '#', bio: 'Faculty Advisor. Profesora del departamento de Ingeniería Mecánica de la UPV/EHU.', history: [{ year: 2023, dept: 'operations', pos: 'faculty' }, { year: 2024, dept: 'operations', pos: 'faculty' }, { year: 2025, dept: 'operations', pos: 'faculty' }] },
+  yearLabels: {
+    '25-26': { label: 'Temporada 2025–2026', title: 'Team 25-26' },
+    '24-25': { label: 'Temporada 2024–2025', title: 'Team 24-25' },
+    '23-24': { label: 'Temporada 2023–2024', title: 'Team 23-24' },
+    '22-23': { label: 'Temporada 2022–2023', title: 'Team 22-23' },
+    '21-22': { label: 'Temporada 2021–2022', title: 'Team 21-22' },
+    '19-20': { label: 'Temporada 2019–2020', title: 'Team 19-20' }
+  },
 
-    // — 2024 —
-    { id: 16, name: 'Eneko Solabarrieta', position: 'team-leader', department: 'operations', years: [2023, 2024], image: null, linkedin: '#', bio: 'Team Leader en 2024. Graduado en Ingeniería Aeroespacial.', history: [{ year: 2023, dept: 'propulsion', pos: 'technical' }, { year: 2024, dept: 'operations', pos: 'team-leader' }] },
-    { id: 17, name: 'June Alonso', position: 'member', department: 'avionics', years: [2024], image: null, linkedin: '#', bio: 'Miembro de aviónica. Diseño de PCBs de telemetría.', history: [{ year: 2024, dept: 'avionics', pos: 'member' }] },
-    { id: 18, name: 'Gorka Peña', position: 'member', department: 'structures', years: [2024], image: null, linkedin: '#', bio: 'Miembro de estructuras. Fabricación de fuselajes en fibra de vidrio.', history: [{ year: 2024, dept: 'structures', pos: 'member' }] },
-    { id: 19, name: 'Irati López', position: 'member', department: 'recovery', years: [2024], image: null, linkedin: '#', bio: 'Miembro de recuperación. Paracaídas y sistemas de frenado.', history: [{ year: 2024, dept: 'recovery', pos: 'member' }] },
+  /**
+   * Members organized by year.
+   * Each member entry: { name, position, department, project? }
+   * For leadership: department = 'leadership'
+   */
+  membersByYear: {
+    '25-26': {
+      faculty: [
+        { name: 'Gontzal López Ruiz', position: 'faculty', department: 'leadership' },
+        { name: 'Ion Agirre Arisketa', position: 'faculty', department: 'leadership' },
+        { name: 'Maria Asuncion Ilarramendi Leturia', position: 'faculty', department: 'leadership' },
+        { name: 'Pedro Luis Arias', position: 'faculty', department: 'leadership' },
+        { name: 'Victor Petuya Arcocha', position: 'faculty', department: 'leadership' }
+      ],
+      leadership: [
+        { name: 'Jimena Isabel del Río Rodrigálvarez', position: 'team-leader', department: 'leadership' },
+        { name: 'Ander Arroyo Kremer', position: 'financial-manager', department: 'leadership' }
+      ],
+      projectManagers: [
+        { name: 'Iñigo Martínez Peña', position: 'project-manager', department: 'leadership', project: 'Valkyrie' },
+        { name: 'Josu del Río Berasategui', position: 'project-manager', department: 'leadership', project: 'Tracker' },
+        { name: 'Mario Casquete De la Puente', position: 'project-manager', department: 'leadership', project: 'Pressure Vessel' },
+        { name: 'Mikel Elustondo Mancisidor', position: 'project-manager', department: 'leadership', project: 'Orion' },
+        { name: 'Nerea Garmendia López de Robles', position: 'project-manager', department: 'leadership', project: 'Delta' },
+        { name: 'Unai Ruiz González', position: 'project-manager', department: 'leadership', project: 'Vulture' },
+        { name: 'Xabier Millan Cavadas', position: 'project-manager', department: 'leadership', project: 'Galileo' }
+      ],
+      departments: {
+        'Aerostructure': {
+          chief: 'Erik Rojas Uribe-Echebarría',
+          members: ['Anne Cuevas Molinos', 'Asier Salgado Rueda', 'Adrian Robledo', 'Alexander Perez Garcia', 'Diego Benitez Arosa', 'Maialen Davis Santiago', 'Patxi Gutiérrez-Barkin', 'Uxue Martitegi Elgezabal', 'Xabier Ruiz de Azua Perez', 'Xabier Martínez Guevara']
+        },
+        'Avionics & Propulsion': {
+          chief: 'Iñigo Martínez Peña',
+          members: ['Aitor Agüeros de Vicente', 'Andoni Vázquez Arza', 'Daniel Vélez Rodríguez', 'Gonzalo De Pablo Fernández', 'Leire Aresti Guijo', 'Lorea Jauregi Ortega', 'Marco Lartategui Ugarte', 'Omar Alonso Quinto', 'Ulises Gutiérrez García', 'Victor de Trigo', 'Victor Llosa Lorenzo', 'Iván Lorenzo Romero', 'Markel Corchado Barbero', 'Leire García Goyoaga', 'Unai Ruiz González', 'Mikel Elustondo Mancisidor']
+        },
+        'Business & Legal': {
+          chief: 'Telmo Ubieta Urrutia',
+          members: ['Elska García Mateos', 'Gonzalo de Maguregui Sánchez', 'Nerea Loriaux Tejón']
+        },
+        'Manufacturing': {
+          chief: 'Hernán Marcos Serna',
+          members: ['Jimena Isabel del Río Rodrigálvarez', 'Josu del Río Berasategui', 'Juan Bilbao Pazos', 'Aritz de la Pinta Morales', 'Gabriel Gutierrez Portal', 'Leire Gómez Asporosa', 'Lucas Radu', 'Martín Molinero Fontecha', 'Nerea Loriaux Tejón', 'Usune Porter']
+        },
+        'Recovery': {
+          chief: 'Jon Ander Sánchez Hernández',
+          members: ['Eneko González Hernández', 'Jon Andoni Esteban Arenas', 'Jon Urizar Duñabeitia', 'Alexander Lejarza Candina', 'Endika Reina Velasco', 'Imanol Cornejo Fernandez', 'Jose Alfonso Merino Viso', 'Martina Olmos Murcia', 'Mikel Laclau', 'Paula Pérez Domínguez', 'Raúl Marcos Sáenz del Burgo', 'Unai Gómez Asporosa']
+        },
+        'Board / Management': {
+          chief: 'Maider Tejada Ruiz de Alegría',
+          members: ['Ander Arroyo Kremer', 'Nerea Garmendia López de Robles', 'Álvaro de Celis Río', 'Borja Montero Algorta', 'Gilberto Riloha Ritope']
+        },
+        'Logistics': {
+          chief: 'Asier López Barrio',
+          members: ['Gonzalo de Maguregui Sánchez', 'Gorka Grijalba Barrañana', 'Lara Sarasola', 'Marta Gómez Fueyo', 'Pablo Enrique Sanchez']
+        },
+        'PR & Communication': {
+          chief: 'Carla Rae Piercey Gonzalez',
+          members: ['Ander Corral Marauri', 'Mario Casquete De la Puente', 'Xabier Millan Cavadas', 'Leire Rodrigo Hernando', 'Marta Gómez Fueyo', 'Mikel Etxebarria Arluzea']
+        }
+      }
+    },
 
-    // — 2023 —
-    { id: 20, name: 'Xabier Uriarte', position: 'team-leader', department: 'operations', years: [2023], image: null, linkedin: '#', bio: 'Fundador y primer Team Leader de BiSKY Team.', history: [{ year: 2023, dept: 'operations', pos: 'team-leader' }] },
-    { id: 21, name: 'Miren Olaizola', position: 'chief', department: 'propulsion', years: [2023], image: null, linkedin: '#', bio: 'Chief de propulsión fundadora. Diseño del primer motor Sua.', history: [{ year: 2023, dept: 'propulsion', pos: 'chief' }] },
-    { id: 22, name: 'Iñigo Aranburu', position: 'member', department: 'structures', years: [2023], image: null, linkedin: '#', bio: 'Miembro fundador de estructuras. Diseño estructural del Artizarra I.', history: [{ year: 2023, dept: 'structures', pos: 'member' }] },
-    { id: 23, name: 'Laia Bengoetxea', position: 'member', department: 'avionics', years: [2023], image: null, linkedin: '#', bio: 'Miembro fundador de aviónica. Primera computadora de vuelo del equipo.', history: [{ year: 2023, dept: 'avionics', pos: 'member' }] }
-  ],
+    '24-25': {
+      faculty: [
+        { name: 'Pedro Luis Arias', position: 'faculty', department: 'leadership' },
+        { name: 'Victor Petuya Arcocha', position: 'faculty', department: 'leadership' },
+        { name: 'Mª Asunción Illarramendi', position: 'faculty', department: 'leadership' }
+      ],
+      leadership: [
+        { name: 'Unai Gómez Asporosa', position: 'team-leader', department: 'leadership' }
+      ],
+      projectManagers: [
+        { name: 'Xabier Millan Cavadas', position: 'project-manager', department: 'leadership', project: 'Launch Rail' },
+        { name: 'Ander Arroyo Kremer', position: 'project-manager', department: 'leadership', project: 'Financial' },
+        { name: 'Jimena Isabel del Río Rodrigálvarez', position: 'project-manager', department: 'leadership', project: 'Tracker' },
+        { name: 'Mikel Elustondo Mancisidor', position: 'project-manager', department: 'leadership', project: 'Orion' },
+        { name: 'Iñigo Martínez Peña', position: 'project-manager', department: 'leadership', project: 'Valkyrie' },
+        { name: 'Mario Casquete De la Puente', position: 'project-manager', department: 'leadership', project: 'Tanque M2' },
+        { name: 'Xabier Martínez Guevara', position: 'project-manager', department: 'leadership', project: 'EROS' }
+      ],
+      departments: {
+        'Business & Management': {
+          chief: 'Juan Bilbao Pazos',
+          members: ['Imanol Cornejo Fernandez', 'Telmo Ubieta Urrutia']
+        },
+        'Avionics': {
+          chief: 'Mikel Elustondo Mancisidor',
+          members: ['Imanol Martínez Macho', 'Leire García Goyoaga', 'Iñigo Martínez Peña']
+        },
+        'Propulsion': {
+          chief: 'Markel Perona Guerra',
+          members: ['Unai Ruiz González', 'Omar Alonso Quinto', 'Markel Corchado Barbero', 'Iván Lorenzo Romero', 'Leire Aresti Guijo']
+        },
+        'Structure': {
+          chief: 'Xabier Millan Cavadas',
+          members: ['Jon Ander Sánchez Hernández', 'Irune Hoz Bregel']
+        },
+        'Aerodynamics & Recovery': {
+          chief: 'Jon Andoni Esteban Arenas',
+          members: ['Jon Urizar Duñabeitia', 'Borja Jimeno Soto']
+        },
+        'Flight Control & Simulation': {
+          chief: 'Jimena Isabel del Río Rodrigálvarez',
+          members: ['Eneko González Hernández']
+        }
+      }
+    },
+
+    '23-24': {
+      faculty: [
+        { name: 'Pedro Luis Arias', position: 'faculty', department: 'leadership' },
+        { name: 'Victor Petuya Arcocha', position: 'faculty', department: 'leadership' },
+        { name: 'Mª Asunción Illarramendi', position: 'faculty', department: 'leadership' }
+      ],
+      leadership: [
+        { name: 'Aitor Barrena Blanco', position: 'team-leader', department: 'leadership' }
+      ],
+      projectManagers: [
+        { name: 'Xabier Millan Cavadas', position: 'project-manager', department: 'leadership', project: 'Launch Rail' },
+        { name: 'Unai Gómez Asporosa', position: 'project-manager', department: 'leadership', project: 'M2' },
+        { name: 'Ander Arroyo Kremer', position: 'project-manager', department: 'leadership', project: 'Hermes' }
+      ],
+      departments: {
+        'Business': {
+          chief: 'Laura Alonso',
+          members: ['Juan Bilbao Pazos', 'Imanol Cornejo Fernandez']
+        },
+        'Avionics': {
+          chief: 'Mikel Elustondo Mancisidor',
+          members: ['Iñigo Martínez Peña', 'Borja Jimeno Soto']
+        },
+        'Propulsion': {
+          chief: 'Jon Andoni Esteban Arenas',
+          members: ['Markel Perona Guerra', 'Unai Ruiz González']
+        },
+        'Structure': {
+          chief: 'Xabier Millan Cavadas',
+          members: ['Jon Ander Sánchez Hernández']
+        },
+        'Aerodynamics & Recovery': {
+          chief: null,
+          members: ['Jimena Isabel del Río Rodrigálvarez', 'Irune Hoz Bregel']
+        },
+        'Flight Control & Simulation': {
+          chief: null,
+          members: ['Eneko González Hernández']
+        }
+      }
+    },
+
+    '22-23': {
+      faculty: [
+        { name: 'Pedro Luis Arias', position: 'faculty', department: 'leadership' },
+        { name: 'Victor Petuya Arcocha', position: 'faculty', department: 'leadership' },
+        { name: 'Mª Asunción Illarramendi', position: 'faculty', department: 'leadership' }
+      ],
+      leadership: [
+        { name: 'Jon Pérez Bozal', position: 'team-leader', department: 'leadership' }
+      ],
+      projectManagers: [],
+      departments: {
+        'Business': {
+          chief: 'Marta Guinea',
+          members: ['Imanol Cornejo Fernandez', 'Juan Bilbao Pazos', 'Laura Alonso']
+        },
+        'Avionics': {
+          chief: 'Aitor Barrena Blanco',
+          members: ['Unai Ruiz González', 'Mikel Elustondo Mancisidor', 'Borja Jimeno Soto']
+        },
+        'Propulsion': {
+          chief: null,
+          members: ['Jon Andoni Esteban Arenas', 'Unai Gómez Asporosa', 'Xabier Millan Cavadas']
+        },
+        'Structure': {
+          chief: null,
+          members: ['Ander Arroyo Kremer', 'Jon Ander Sánchez Hernández']
+        }
+      }
+    },
+
+    '21-22': {
+      faculty: [
+        { name: 'Pedro Luis Arias', position: 'faculty', department: 'leadership' },
+        { name: 'Víctor Petuya', position: 'faculty', department: 'leadership' },
+        { name: 'Mª Asunción Illarramendi', position: 'faculty', department: 'leadership' },
+        { name: 'Hegoi Amestoy', position: 'faculty', department: 'leadership' }
+      ],
+      leadership: [
+        { name: 'Jon Pérez Bozal', position: 'team-leader', department: 'leadership' }
+      ],
+      projectManagers: [
+        { name: 'Ignacio Amundarain', position: 'project-manager', department: 'leadership', project: 'Charlie' },
+        { name: 'Daniel Pérez', position: 'project-manager', department: 'leadership', project: 'M2' }
+      ],
+      departments: {
+        'Business & Management': {
+          chief: null,
+          members: ['Marta Guinea', 'Joseba Iparraguirre']
+        },
+        'Avionics': {
+          chief: null,
+          members: ['Aitor Barrena Blanco', 'Jon Pérez Bozal']
+        },
+        'Propulsion': {
+          chief: null,
+          members: ['Daniel Pérez', 'Ignacio Amundarain']
+        },
+        'Structure': {
+          chief: null,
+          members: ['Ander Arroyo Kremer']
+        },
+        'Aerodynamics & Recovery': {
+          chief: null,
+          members: ['Unai Gómez Asporosa']
+        }
+      }
+    },
+
+    '19-20': {
+      faculty: [
+        { name: 'Pedro Luis Arias', position: 'faculty', department: 'leadership' },
+        { name: 'Victor Petuya', position: 'faculty', department: 'leadership' },
+        { name: 'Mª Asunción Illarramendi', position: 'faculty', department: 'leadership' },
+        { name: 'Hegoi Amestoy', position: 'faculty', department: 'leadership' }
+      ],
+      leadership: [
+        { name: 'Maria Carrillo', position: 'team-leader', department: 'leadership' }
+      ],
+      projectManagers: [
+        { name: 'Javier Garibi', position: 'project-manager', department: 'leadership', project: 'Charlie' },
+        { name: 'Ana Ruiz', position: 'project-manager', department: 'leadership', project: 'M2' },
+        { name: 'Xabier Idiondo', position: 'project-manager', department: 'leadership', project: 'Arima & Saiakera' }
+      ],
+      departments: {
+        'Business & Management': {
+          chief: 'Joseba Iparraguirre',
+          members: ['Jon Pérez Bozal']
+        },
+        'Avionics': {
+          chief: null,
+          members: ['Laura Burgos', 'Andreea Stanciu', 'Iñigo Bouzas']
+        },
+        'Propulsion': {
+          chief: null,
+          members: ['Javier Garibi', 'Ana Ruiz']
+        },
+        'Structure': {
+          chief: null,
+          members: ['Xabier Idiondo']
+        },
+        'Aerodynamics & Recovery': {
+          chief: null,
+          members: ['Maria Carrillo']
+        },
+        'Flight Control & Simulation': {
+          chief: null,
+          members: ['Mikel Montoya']
+        }
+      }
+    }
+  },
+
+  /**
+   * Photo mapping for members with photos in assets/members/
+   * Key: display name, Value: filename (without path)
+   */
+  memberPhotos: {
+    'Adrian Robledo': 'Adrian Robledo.jpg',
+    'Aitor Agüeros de Vicente': 'Aitor Agüeros de Vicente.jpg',
+    'Aitor Barrena Blanco': 'Aitor Barrena Blanco.jpg',
+    'Alexander Lejarza Candina': 'Alexander Lejarza Candina.jpg',
+    'Alexander Perez Garcia': 'Alexander Perez Garcia.jpg',
+    'Ander Arroyo Kremer': 'Ander Arroyo Kremer.jpg',
+    'Ander Corral Marauri': 'Ander Corral Marauri.jpg',
+    'Andoni Vázquez Arza': 'Andoni Vázquez Arza.jpg',
+    'Anne Cuevas Molinos': 'Anne Cueves Molinos.jpg',
+    'Aritz de la Pinta Morales': 'Aritz de la Pinta Morales.jpg',
+    'Asier López Barrio': 'Asier López Barrio.jpg',
+    'Asier Salgado Rueda': 'Asier Salgado Rueda.jpg',
+    'Álvaro de Celis Río': 'Álvaro de Celis Río.jpg',
+    'Borja Jimeno Soto': 'Borja Jimeno Soto.jpg',
+    'Borja Montero Algorta': 'Borja Montero Algorta.jpg',
+    'Carla Rae Piercey Gonzalez': 'Carla Rae Piercey Gonzalez.jpg',
+    'Daniel Vélez Rodríguez': 'Daniel Vélez Rodríguez.jpg',
+    'Diego Benitez Arosa': 'Diego Benitez Arosa.jpg',
+    'Diego Yannick Fonseca Alvarez': 'Diego Yannick Fonseca Alvarez.jpg',
+    'Elska García Mateos': 'Elska García Mateos.jpg',
+    'Endika Reina Velasco': 'Endika Reina Velasco.jpg',
+    'Eneko González Hernández': 'Eneko González Hernández.jpg',
+    'Erik Rojas Uribe-Echebarría': 'Erik Rojas Uribe-Echebarría.jpg',
+    'Gabriel Gutierrez Portal': 'Gabriel Gutierrez Portal.jpg',
+    'Gilberto Riloha Ritope': 'Gilberto Riloha Ritope.jpg',
+    'Gontzal López Ruiz': 'Gontzal López Ruiz.jpg',
+    'Gonzalo De Pablo Fernández': 'Gonzalo De Pablo Fernández.jpg',
+    'Gonzalo de Maguregui Sánchez': 'Gonzalo de Maguregui Sánchez.jpg',
+    'Gorka Grijalba Barrañana': 'Gorka Grijalba Barrañana.jpg',
+    'Hernán Marcos Serna': 'Hernán Marcos Serna.jpg',
+    'Imanol Cornejo Fernandez': 'Imanol Cornejo Fernandez.jpg',
+    'Imanol Martínez Macho': 'Imanol Martínez Macho.jpg',
+    'Iñigo Martínez Peña': 'Iñigo Martínez Peña.jpg',
+    'Ion Agirre Arisketa': 'Ion Agirre Arisketa.jpg',
+    'Irune Hoz Bregel': 'Irune Hoz Bregel.jpg',
+    'Iván Lorenzo Romero': 'Ivan Lorenzo Romero.jpg',
+    'Jimena Isabel del Río Rodrigálvarez': 'Jimena Isabel del Río Rodrigálvarez.jpg',
+    'Jon Ander Sánchez Hernández': 'Jon Ander Sánchez Hernández.jpg',
+    'Jon Andoni Esteban Arenas': 'Jon Andoni Esteban Arenas.jpg',
+    'Jon Urizar Duñabeitia': 'Jon Urizar Duñabeitia.jpg',
+    'Jose Alfonso Merino Viso': 'Jose Alfonso Merino Viso.jpg',
+    'Josu del Río Berasategui': 'Josu del Río Berasategui.jpg',
+    'Juan Bilbao Pazos': 'Juan Bilbao Pazos.jpg',
+    'Lara Sarasola': 'Lara Sarasola.jpg',
+    'Leire Aresti Guijo': 'Leire Aresti Guijo.jpg',
+    'Leire García Goyoaga': 'Leire Garcia Goyoaga.jpg',
+    'Leire Gómez Asporosa': 'Leire Gómez Asporosa.jpg',
+    'Leire Rodrigo Hernando': 'Leire Rodrigo Hernando.jpg',
+    'Lorea Jauregi Ortega': 'Lorea Jauregi Ortega.jpg',
+    'Lucas Radu': 'Lucas Radu.jpg',
+    'Maialen Davis Santiago': 'Maialen Davis Santiago.jpg',
+    'Maider Tejada Ruiz de Alegría': 'Maider Tejada Ruiz de Alegría.jpg',
+    'Marco Lartategui Ugarte': 'Marco Lartategui Ugarte.jpg',
+    'Maria Asuncion Ilarramendi Leturia': 'Maria Asuncion Ilarramendi Leturia.jpg',
+    'Mario Casquete De la Puente': 'Mario Casquete De la Puente.jpg',
+    'Markel Corchado Barbero': 'Markel Corchado Barbero.jpg',
+    'Markel Perona Guerra': 'Markel Perona Guerra.jpg',
+    'Marta Gómez Fueyo': 'Marta Gómez Fueyo.jpg',
+    'Martina Olmos Murcia': 'Martina Olmos Murcia.jpg',
+    'Martín Molinero Fontecha': 'Martín Molinero Fontecha.jpg',
+    'Mikel Elustondo Mancisidor': 'Mikel Elustondo Mancisidor.jpg',
+    'Mikel Etxebarria Arluzea': 'Mikel Etxebarria Arluzea.jpg',
+    'Mikel Laclau': 'Mikel Laclau.jpg',
+    'Nerea Garmendia López de Robles': 'Nerea Garmendia López de Robles.jpg',
+    'Nerea Loriaux Tejón': 'Nerea Loriaux Tejón.jpg',
+    'Omar Alonso Quinto': 'Omar Alonso Quinto.jpg',
+    'Pablo Enrique Sanchez': 'Pablo Enrique Sanchez.jpg',
+    'Patxi Gutiérrez-Barkin': 'Patxi Gutiérrez-Barkin.jpg',
+    'Paula Pérez Domínguez': 'Paula Pérez Domínguez.jpg',
+    'Raúl Marcos Sáenz del Burgo': 'Raúl Marcos Sáenz del Burgo.jpg',
+    'Telmo Ubieta Urrutia': 'Telmo Ubieta Urrutia.jpg',
+    'Ulises Gutiérrez García': 'Ulises Gutiérrez García.jpg',
+    'Unai Gómez Asporosa': 'Unai Gómez Asporosa.jpg',
+    'Unai Ruiz González': 'Unai Ruiz González.jpg',
+    'Usune Porter': 'Usune Porter.jpg',
+    'Uxue Martitegi Elgezabal': 'Uxue Martitegi Elgezabal.jpg',
+    'Victor Llosa Lorenzo': 'Victor Llosa Lorenzo.jpg',
+    'Victor Petuya Arcocha': 'Victor Petuya Arcocha.jpg',
+    'Victor de Trigo': 'Victor de Trigo.jpg',
+    'Xabier Martínez Guevara': 'Xabier Martínez Guevara.jpg',
+    'Xabier Millan Cavadas': 'Xabier Millan Cavadas.jpg',
+    'Xabier Ruiz de Azua Perez': 'Xabier Ruiz de Azua Perez.jpg'
+  },
 
   projects: {
     rockets: [
       {
-        id: 'artizarra-1', name: 'Artizarra I', year: 2023, category: 'rockets',
-        status: 'Completado', tagline: 'Primer cohete de sondeo del equipo',
-        description: 'Artizarra I fue el primer cohete de sondeo diseñado y construido por BiSKY Team. Un hito fundacional que demostró la capacidad del equipo para ejecutar un proyecto aeroespacial universitario completo, desde el diseño hasta el lanzamiento.',
-        specs: { height: '1.8 m', diameter: '98 mm', mass: '6.2 kg', motor: 'Sua MK-I', apogee: '1,200 m', impulse: 'L-class' },
+        id: 'hermes', name: 'Hermes', category: 'rockets',
+        status: 'Completado', tagline: 'Cohete de combustible sólido para pruebas electrónicas EROS',
+        description: 'Hermes es un cohete de combustible sólido diseñado para probar y validar el sistema electrónico EROS desarrollado internamente por el equipo. Permitió verificar los sistemas de telemetría y control de vuelo en condiciones reales de lanzamiento.',
+        specs: { propulsion: 'Sólida', mission: 'Test electronics EROS' },
         image: null
       },
       {
-        id: 'artizarra-2', name: 'Artizarra II', year: 2024, category: 'rockets',
-        status: 'Completado', tagline: 'Iteración mejorada con aviónica integrada',
-        description: 'Evolución directa del Artizarra I. Incorpora un sistema de aviónica completo con telemetría en tiempo real, estructura optimizada en fibra de carbono y un sistema de recuperación de doble evento.',
-        specs: { height: '2.1 m', diameter: '98 mm', mass: '7.8 kg', motor: 'Sua MK-II', apogee: '2,400 m', impulse: 'M-class' },
+        id: 'charlie', name: 'Charlie', category: 'rockets',
+        status: 'Completado', tagline: 'Primer cohete en volar con electrónica EROS propia',
+        description: 'Charlie fue el primer cohete del equipo en incorporar la aviónica EROS de diseño propio en un vuelo real. Este hito representó la integración completa entre el departamento de propulsión y aviónica del equipo.',
+        specs: { propulsion: 'Sólida', mission: 'First flight with in-house EROS electronics' },
         image: null
       },
       {
-        id: 'sugaar', name: 'Sugaar', year: 2025, category: 'rockets',
-        status: 'En desarrollo', tagline: 'Cohete de alta potencia para competición',
-        description: 'Sugaar representa el salto técnico más ambicioso de BiSKY Team. Diseñado para competiciones internacionales de cohetería, incorpora un motor de propelente sólido a medida, estructura en fibra de carbono, aviónica avanzada con doble redundancia y un sistema de payload modular.',
-        specs: { height: '2.8 m', diameter: '127 mm', mass: '14.5 kg', motor: 'Sua MK-III', apogee: '4,500 m (est.)', impulse: 'N-class' },
+        id: 'atlas', name: 'Atlas', category: 'rockets',
+        status: 'Completado', tagline: 'Pruebas de recuperación con paracaídas',
+        description: 'Atlas se diseñó específicamente para probar el sistema de recuperación con paracaídas del equipo. Su lanzamiento permitió validar los mecanismos de despliegue y la secuencia de eventos de recuperación en vuelo real.',
+        specs: { propulsion: 'Sólida', mission: 'Parachute recovery test' },
+        image: null
+      },
+      {
+        id: 'io', name: 'Io', category: 'rockets',
+        status: 'Completado', tagline: 'Dos lanzamientos exitosos para validar sistemas de paracaídas',
+        description: 'Io completó dos lanzamientos exitosos consecutivos, consolidando la capacidad del equipo en sistemas de recuperación por paracaídas. Cada vuelo proporcionó datos valiosos para el diseño iterativo del sistema de recuperación.',
+        specs: { propulsion: 'Sólida', launches: '2 exitosos', mission: 'Parachute system validation' },
+        image: null
+      },
+      {
+        id: 'ganimedes', name: 'Ganimedes', category: 'rockets',
+        status: 'Completado', tagline: 'Pruebas del sistema de despliegue de paracaídas',
+        description: 'Ganimedes fue diseñado para probar el mecanismo de despliegue del paracaídas. El proyecto se centró en validar la secuencia de apertura y la integridad estructural del sistema de recuperación durante el vuelo.',
+        specs: { propulsion: 'Sólida', mission: 'Parachute deployment system test' },
+        image: null
+      },
+      {
+        id: 'arima', name: 'Arima', category: 'rockets',
+        status: 'Completado', tagline: 'Tercer cohete del equipo — fabricación integral interna',
+        description: 'Arima fue el tercer cohete desarrollado por BiSKY Team. Todos los elementos fueron fabricados por el equipo excepto el motor, representando un paso importante hacia la autonomía completa en el diseño y producción de cohetes.',
+        specs: { propulsion: 'Sólida (motor externo)', mission: 'Full in-house manufacturing except motor' },
+        image: null
+      },
+      {
+        id: 'bravo', name: 'Bravo', category: 'rockets',
+        status: 'Completado', tagline: 'Segundo cohete diseñado, fabricado y lanzado por el equipo',
+        description: 'Bravo fue el segundo cohete completamente diseñado, fabricado y lanzado por BiSKY Team. Consolidó las capacidades de diseño e integración del equipo y proporcionó experiencia valiosa para cohetes posteriores.',
+        specs: { propulsion: 'Sólida', mission: 'Complete design-to-launch cycle' },
         image: null
       }
     ],
-    motors: [
+    engines: [
       {
-        id: 'sua-mk1', name: 'Sua MK-I', year: 2023, category: 'motors',
-        status: 'Completado', tagline: 'Primer motor de propelente sólido',
-        description: 'Motor de propelente sólido L-class diseñado integramente por el departamento de propulsión. Utiliza una formulación KNSB optimizada para el perfil de empuje requerido por el Artizarra I.',
-        specs: { classification: 'L-class', propellant: 'KNSB', totalImpulse: '2,560 Ns', burnTime: '3.2 s', avgThrust: '800 N' },
+        id: 'm3', name: 'M3', category: 'engines',
+        status: 'En desarrollo', tagline: 'Primer motor híbrido integrado en un cohete del equipo',
+        description: 'M3 será el primer motor híbrido completamente diseñado por el equipo que se integrará en un cohete propio. Representa la culminación de años de investigación en propulsión híbrida y un paso decisivo hacia el objetivo de los 100 km.',
+        specs: { type: 'Híbrido', status: 'En desarrollo' },
         image: null
       },
       {
-        id: 'sua-mk2', name: 'Sua MK-II', year: 2024, category: 'motors',
-        status: 'Completado', tagline: 'Motor M-class con carcasa mejorada',
-        description: 'Segunda iteración del motor Sua. Incorpora una carcasa de aluminio 6061 mecanizada con tolerancias de ±0.05 mm, junta tórica de sellado mejorada y tobera con perfil de Laval optimizado por CFD.',
-        specs: { classification: 'M-class', propellant: 'KNSB', totalImpulse: '5,120 Ns', burnTime: '4.1 s', avgThrust: '1,250 N' },
+        id: 'm2', name: 'M2', category: 'engines',
+        status: 'Completado', tagline: 'Segunda iteración del motor híbrido del equipo',
+        description: 'M2 es la segunda iteración completamente diseñada por el equipo de los motores híbridos. Incorpora mejoras significativas basadas en los aprendizajes del M1 y M1.5, con un diseño optimizado de la cámara de combustión y sistema de inyección.',
+        specs: { type: 'Híbrido', iteration: '2ª generación' },
         image: null
       },
       {
-        id: 'sua-mk3', name: 'Sua MK-III', year: 2025, category: 'motors',
-        status: 'En desarrollo', tagline: 'Motor N-class de alto rendimiento',
-        description: 'El motor más potente desarrollado por BiSKY. Diseñado específicamente para el cohete Sugaar, con propelente APCP y simulaciones extensivas de rendimiento térmico-estructural.',
-        specs: { classification: 'N-class', propellant: 'APCP', totalImpulse: '10,240 Ns (est.)', burnTime: '5.8 s (est.)', avgThrust: '1,766 N (est.)' },
+        id: 'm1-5', name: 'M1.5', category: 'engines',
+        status: 'Completado', tagline: 'Versión mejorada del M1 con capacidad de ignición',
+        description: 'M1.5 representó una mejora evolutiva del M1 con la adición de capacidad de ignición. Esta iteración permitió validar el proceso de encendido del motor híbrido, un paso crítico para la operación autónoma del sistema propulsivo.',
+        specs: { type: 'Híbrido', improvement: 'Ignition capability' },
+        image: null
+      },
+      {
+        id: 'm1', name: 'M1', category: 'engines',
+        status: 'Completado', tagline: 'Primer motor híbrido diseñado por el equipo — primero universitario en España',
+        description: 'M1 fue el primer motor híbrido diseñado por BiSKY Team y el primer motor híbrido de desarrollo estudiantil disparado en España. Un hito histórico para la cohetería universitaria española que demostró la viabilidad de la tecnología híbrida en un entorno universitario.',
+        specs: { type: 'Híbrido', milestone: 'First student-developed hybrid engine fired in Spain' },
         image: null
       }
     ],
-    launchRails: [
+    infrastructures: [
       {
-        id: 'abiarazi-1', name: 'Abiarazi I', year: 2023, category: 'launch-rails',
-        status: 'Completado', tagline: 'Rampa de lanzamiento modular',
-        description: 'Primera rampa de lanzamiento diseñada por el equipo. Estructura de aluminio modular con rail de guiado de 3 metros, sistema de regulación angular de 0° a 15° y placa base con anclajes de estabilización.',
-        specs: { length: '3 m', maxAngle: '15°', material: 'Aluminio 6061', maxRocketMass: '15 kg', guidingSystem: 'V-rail 1515' },
-        image: null
-      }
-    ],
-    auxiliary: [
-      {
-        id: 'ground-station', name: 'Ground Station v1', year: 2024, category: 'auxiliary',
-        status: 'Completado', tagline: 'Sistema de telemetría en tierra',
-        description: 'Estación de tierra para recepción y visualización de telemetría en tiempo real. Incluye receptor RF a 433 MHz, procesamiento de datos e interfaz gráfica con representación 3D de la trayectoria.',
-        specs: { frequency: '433 MHz', range: '5 km', dataRate: '19.2 kbps', interface: 'Custom GUI', protocol: 'LoRa' },
+        id: 'launch-rail', name: 'Launch Rail', category: 'infrastructures',
+        status: 'Completado', tagline: 'Estructura de guiado para la fase inicial de despegue',
+        description: 'El Launch Rail es la estructura que guía al cohete durante la primera fase del despegue. Diseñado y fabricado por el equipo, proporciona la estabilidad direccional necesaria hasta que el cohete alcanza velocidad suficiente para que las aletas aerodinámicas sean efectivas.',
+        specs: { function: 'Launch guidance', design: 'Modular' },
         image: null
       },
       {
-        id: 'payload-bay', name: 'Payload Bay System', year: 2025, category: 'auxiliary',
-        status: 'En desarrollo', tagline: 'Sistema modular de cargas útiles',
-        description: 'Bahía de carga útil universal diseñada para el cohete Sugaar. Permite integrar diferentes payloads experimentales con un sistema de interfaces estandarizado.',
-        specs: { diameter: '110 mm', length: '200 mm', maxPayload: '500 g', interface: 'Estándar CubeSat-adaptado' },
+        id: 'galileo', name: 'Galileo', category: 'infrastructures',
+        status: 'En desarrollo', tagline: 'Estructura auxiliar modular para lanzamientos',
+        description: 'Galileo es una estructura auxiliar modular diseñada para complementar las operaciones de lanzamiento del equipo. Su diseño modular permite adaptarse a diferentes configuraciones de cohete y condiciones de campo.',
+        specs: { type: 'Modular auxiliary structure' },
+        image: null
+      },
+      {
+        id: 'contenedor-m2', name: 'Contenedor M2', category: 'infrastructures',
+        status: 'Completado', tagline: 'Instalación para ensayos de motores más rápidos y organizados',
+        description: 'El Contenedor M2 es una instalación dedicada que permite realizar ensayos de disparo de motores de forma más rápida y organizada. Proporciona un entorno controlado y seguro para la caracterización de motores híbridos.',
+        specs: { function: 'Engine test facility' },
+        image: null
+      }
+    ],
+    rd: [
+      {
+        id: 'orion', name: 'Orion', category: 'rd',
+        status: 'Activo', tagline: 'Mantenimiento y desarrollo periódico de aviónica',
+        description: 'Orion es el programa de mantenimiento y desarrollo continuo de los sistemas de aviónica del equipo. Su objetivo es reducir costes mediante la implementación de nuevos chips y componentes, manteniendo y mejorando las capacidades electrónicas de vuelo.',
+        specs: { focus: 'Avionics maintenance & cost reduction', type: 'Ongoing R&D' },
+        image: null
+      },
+      {
+        id: 'carbon-fiber-tank', name: 'Carbon Fiber Tank', category: 'rd',
+        status: 'En desarrollo', tagline: 'Tanques COPV de fibra de carbono para reducción de peso',
+        description: 'El proyecto Carbon Fiber Tank busca la reducción de peso de los cohetes híbridos sustituyendo los tanques de acero por tanques COPV (Composite Overwrapped Pressure Vessel) de fibra de carbono. Esta optimización es clave para maximizar la altitud alcanzable.',
+        specs: { focus: 'Weight reduction', technology: 'COPV — Carbon fiber composite', application: 'Hybrid engine tanks' },
         image: null
       }
     ]
@@ -158,31 +548,44 @@ const BISKY = {
       { id: 'software', name: 'Software', order: 7 }
     ],
     list: [
-      { id: 1, name: 'UPV/EHU', tier: 'cosmos', website: '#', description: 'Universidad del País Vasco. Principal sponsor institucional del equipo.' },
-      { id: 2, name: 'Gobierno Vasco', tier: 'cosmos', website: '#', description: 'Apoyo institucional del Gobierno Vasco al programa de cohetería universitaria.' },
-      { id: 3, name: 'ITP Aero', tier: 'galaxy', website: '#', description: 'Empresa líder en fabricación de motores aeronáuticos y componentes de turbinas.' },
-      { id: 4, name: 'Sener Aeroespacial', tier: 'galaxy', website: '#', description: 'Grupo de ingeniería y tecnología con división aeroespacial.' },
-      { id: 5, name: 'Fagor Ederlan', tier: 'nebula', website: '#', description: 'Fabricante de componentes de alta precisión y fundición avanzada.' },
-      { id: 6, name: 'Idom', tier: 'nebula', website: '#', description: 'Consultoría profesional de ingeniería, arquitectura y consultoría.' },
-      { id: 7, name: 'Tecnalia', tier: 'star', website: '#', description: 'Centro de investigación y desarrollo tecnológico.' },
-      { id: 8, name: 'CIC energiGUNE', tier: 'star', website: '#', description: 'Centro de investigación en almacenamiento de energía.' },
-      { id: 9, name: 'Erreka', tier: 'satellite', website: '#', description: 'Empresa de automatización y soluciones industriales.' },
-      { id: 10, name: 'Ulma', tier: 'satellite', website: '#', description: 'Grupo industrial cooperativo con soluciones para construcción e industria.' },
-      { id: 11, name: 'Mondragón Unibertsitatea', tier: 'earth', website: '#', description: 'Colaboración académica inter-universitaria.' },
-      { id: 12, name: 'Kutxabank', tier: 'earth', website: '#', description: 'Entidad financiera con programa de apoyo a la innovación universitaria.' },
-      { id: 13, name: 'ANSYS', tier: 'software', website: '#', description: 'Suite de simulación FEA, CFD y multifísica.' },
-      { id: 14, name: 'SolidWorks', tier: 'software', website: '#', description: 'Software de diseño CAD 3D parametrizado.' },
-      { id: 15, name: 'Altium', tier: 'software', website: '#', description: 'Herramienta profesional de diseño de PCBs.' },
-      { id: 16, name: 'MATLAB', tier: 'software', website: '#', description: 'Entorno de cálculo numérico y simulación.' }
+      { id: 1, name: 'Diputación Foral de Bizkaia', tier: 'cosmos', website: '#', description: 'Institución foral que apoya el desarrollo tecnológico y la investigación universitaria en Bizkaia.' },
+      { id: 2, name: 'Bufete Mas y Calvet', tier: 'galaxy', website: '#', description: 'Asesoramiento jurídico para el equipo.' },
+      { id: 3, name: 'Harmonic Drive', tier: 'galaxy', website: '#', description: 'Fabricante de componentes mecánicos de precisión.' },
+      { id: 4, name: 'IDOM', tier: 'galaxy', website: '#', description: 'Consultoría profesional de ingeniería, arquitectura y consultoría.' },
+      { id: 5, name: 'Satlantis', tier: 'galaxy', website: '#', description: 'Empresa de tecnología espacial especializada en instrumentos ópticos para satélites.' },
+      { id: 6, name: 'Sener', tier: 'galaxy', website: '#', description: 'Grupo de ingeniería y tecnología con división aeroespacial.' },
+      { id: 7, name: 'Ayuntamiento de Bilbao', tier: 'nebula', website: '#', description: 'Apoyo institucional del Ayuntamiento de Bilbao.' },
+      { id: 8, name: 'Compoxi', tier: 'nebula', website: '#', description: 'Especialistas en materiales compuestos y fibra de carbono.' },
+      { id: 9, name: 'Gedore', tier: 'nebula', website: '#', description: 'Fabricante de herramientas industriales de alta calidad.' },
+      { id: 10, name: 'Tecnalia', tier: 'nebula', website: '#', description: 'Centro de investigación y desarrollo tecnológico.' },
+      { id: 11, name: 'CADTECH', tier: 'star', website: '#', description: 'Soluciones de diseño CAD avanzadas.' },
+      { id: 12, name: 'CFAA', tier: 'star', website: '#', description: 'Centro de Fabricación Avanzada Aeronáutica.' },
+      { id: 13, name: 'CTA', tier: 'star', website: '#', description: 'Corporación Tecnológica de Andalucía.' },
+      { id: 14, name: 'MADIT Metal', tier: 'star', website: '#', description: 'Fabricación e impresión 3D en metal.' },
+      { id: 15, name: 'SUGATSUNE', tier: 'star', website: '#', description: 'Componentes y herrajes industriales.' },
+      { id: 16, name: 'Eurocircuits', tier: 'star', website: '#', description: 'Fabricación de PCBs de alta calidad bajo demanda.' },
+      { id: 17, name: 'IZAR', tier: 'star', website: '#', description: 'Fabricante de herramientas de corte y mecanizado.' },
+      { id: 18, name: 'NORELEM', tier: 'star', website: '#', description: 'Componentes estándar para ingeniería mecánica.' },
+      { id: 19, name: 'OWASYS', tier: 'star', website: '#', description: 'Soluciones IoT y electrónica embebida.' },
+      { id: 20, name: 'CIFP Iurreta LHII', tier: 'earth', website: '#', description: 'Centro de formación profesional — colaboración educativa.' },
+      { id: 21, name: 'INEKO', tier: 'earth', website: '#', description: 'Consultoría y servicios empresariales.' },
+      { id: 22, name: 'SAMTEC', tier: 'earth', website: '#', description: 'Conectores electrónicos de alta velocidad.' },
+      { id: 23, name: 'SAMYLABS', tier: 'earth', website: '#', description: 'Laboratorio de innovación y prototipado.' },
+      { id: 24, name: 'Altium', tier: 'software', website: '#', description: 'Herramienta profesional de diseño de PCBs.' },
+      { id: 25, name: 'Dassault Systèmes', tier: 'software', website: '#', description: 'Suite de software 3D — SOLIDWORKS, CATIA, SIMULIA.' }
     ]
   },
+
+  // ————————————————————
+  // HELPER METHODS
+  // ————————————————————
 
   getAllProjects() {
     return [
       ...this.projects.rockets,
-      ...this.projects.motors,
-      ...this.projects.launchRails,
-      ...this.projects.auxiliary
+      ...this.projects.engines,
+      ...this.projects.infrastructures,
+      ...this.projects.rd
     ];
   },
 
@@ -190,26 +593,32 @@ const BISKY = {
     return this.getAllProjects().find(p => p.id === id);
   },
 
-  getMemberById(id) {
-    return this.members.find(m => m.id === parseInt(id));
+  getYearData(yearKey) {
+    return this.membersByYear[yearKey] || null;
   },
 
-  getMembersByYear(year) {
-    return this.members.filter(m => m.years.includes(parseInt(year)));
+  getMemberPhoto(name, basePath) {
+    // basePath should be the path prefix to the images folder
+    const filename = this.memberPhotos[name];
+    if (!filename) return null;
+    return `${basePath}${encodeURIComponent(filename)}`;
   },
 
-  getMembersByDeptAndYear(dept, year) {
-    year = parseInt(year);
-    return this.members.filter(m => {
-      const record = m.history.find(h => h.year === year);
-      return record && record.dept === dept;
-    });
-  },
-
-  getMemberYearRecord(memberId, year) {
-    const member = this.getMemberById(memberId);
-    if (!member) return null;
-    return member.history.find(h => h.year === parseInt(year));
+  /** Count all unique members in a given year */
+  countMembersInYear(yearKey) {
+    const data = this.membersByYear[yearKey];
+    if (!data) return 0;
+    const names = new Set();
+    if (data.faculty) data.faculty.forEach(m => names.add(m.name));
+    if (data.leadership) data.leadership.forEach(m => names.add(m.name));
+    if (data.projectManagers) data.projectManagers.forEach(m => names.add(m.name));
+    if (data.departments) {
+      Object.values(data.departments).forEach(dept => {
+        if (dept.chief) names.add(dept.chief);
+        if (dept.members) dept.members.forEach(n => names.add(n));
+      });
+    }
+    return names.size;
   },
 
   getSponsorsByTier(tierId) {
@@ -221,24 +630,36 @@ const BISKY = {
     return pos ? pos.name : posId;
   },
 
-  getDepartmentName(deptId) {
-    const dept = this.departments.find(d => d.id === deptId);
-    return dept ? dept.name : deptId;
-  },
-
   getCategoryLabel(cat) {
     const labels = {
-      'rockets': 'Cohetes',
-      'motors': 'Motores',
-      'launch-rails': 'Launch Rails',
-      'auxiliary': 'Proyectos Auxiliares'
+      'rockets': 'Rockets',
+      'engines': 'Engines',
+      'infrastructures': 'Infrastructures',
+      'rd': 'R&D'
     };
     return labels[cat] || cat;
+  },
+
+  getCategoryIcon(cat) {
+    const icons = {
+      'rockets': '🚀',
+      'engines': '⊘',
+      'infrastructures': '⊞',
+      'rd': '◎'
+    };
+    return icons[cat] || '◇';
   },
 
   getStatusClass(status) {
     if (status === 'Completado') return 'status--completed';
     if (status === 'En desarrollo') return 'status--active';
+    if (status === 'Activo') return 'status--active';
     return 'status--planned';
+  },
+
+  /** Generate a slug-safe ID from a member name */
+  memberSlug(name) {
+    return name.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
   }
 };

@@ -1,17 +1,17 @@
 /**
  * BiSKY Team — Home Page Logic
- * Populates dynamic sections on the homepage
+ * Populates dynamic sections on the homepage with real data
  */
 document.addEventListener('DOMContentLoaded', () => {
 
   /* —— Projects Preview Grid —— */
   const projectsGrid = document.getElementById('home-projects-grid');
   if (projectsGrid) {
-    // Show a selection of projects (exclude Sugaar since it's featured)
     const previewProjects = [
-      BISKY.projects.rockets.find(r => r.id === 'artizarra-2'),
-      BISKY.projects.motors.find(m => m.id === 'sua-mk3'),
-      BISKY.projects.launchRails[0]
+      BISKY.projects.rockets.find(r => r.id === 'charlie'),
+      BISKY.projects.engines.find(m => m.id === 'm1'),
+      BISKY.projects.infrastructures.find(i => i.id === 'launch-rail'),
+      BISKY.projects.rd.find(r => r.id === 'carbon-fiber-tank')
     ].filter(Boolean);
 
     previewProjects.forEach((project, i) => {
@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="project-card__body">
           <div class="project-card__meta">
             <span class="project-card__category">${BISKY.getCategoryLabel(project.category)}</span>
-            <span class="project-card__year">${project.year}</span>
           </div>
           <h3 class="project-card__title">${project.name}</h3>
           <p class="project-card__tagline">${project.tagline}</p>
@@ -40,56 +39,72 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* —— Departments Grid —— */
+  /* —— Technology / Key Areas Grid —— */
   const deptsGrid = document.getElementById('departments-grid');
   if (deptsGrid) {
-    const deptDescriptions = {
-      propulsion: 'Diseño, fabricación y ensayo de motores de propelente sólido. Desde la formulación del propelente hasta la caracterización en banco de pruebas.',
-      structures: 'Diseño estructural, análisis FEA y fabricación de fuselajes, acoples y componentes en materiales compuestos.',
-      avionics: 'Computadoras de vuelo, telemetría, sensores inerciales y sistemas electrónicos de a bordo.',
-      recovery: 'Sistemas de recuperación con paracaídas, eyección pirotécnica y algoritmos de despliegue seguro.',
-      aerodynamics: 'Análisis CFD, diseño de perfiles aerodinámicos, simulaciones de estabilidad y trayectoria.',
-      operations: 'Gestión de proyectos, logística de lanzamiento, seguridad de campo y coordinación general del equipo.'
-    };
+    const keyAreas = [
+      { icon: '⊘', name: 'Hybrid Propulsion', desc: 'Design and testing of hybrid rocket engines using liquid oxidizer and solid fuel. From M1 — the first Spanish university hybrid engine — to the current M3.' },
+      { icon: '⊡', name: 'Avionics & EROS', desc: 'Custom flight computers, telemetry, inertial sensors, and the EROS electronics platform — all designed and manufactured by the team.' },
+      { icon: '◈', name: 'Aerostructure', desc: 'Structural design, FEA analysis, and manufacturing of airframes and components using advanced composite materials.' },
+      { icon: '⊙', name: 'Recovery Systems', desc: 'Parachute deployment mechanisms, ejection systems, and safe recovery algorithms validated across multiple flights.' },
+      { icon: '⊞', name: 'Manufacturing', desc: 'In-house fabrication of all rocket components — from carbon fiber layups to metal machining and 3D printing.' },
+      { icon: '◎', name: 'R&D', desc: 'Ongoing research in carbon fiber COPV tanks, avionics cost reduction, and next-generation propulsion technologies.' }
+    ];
 
-    BISKY.departments.forEach((dept, i) => {
+    keyAreas.forEach((area, i) => {
       const card = document.createElement('div');
       card.className = 'dept-card reveal reveal-delay-' + (i + 1);
       card.innerHTML = `
-        <div class="dept-card__icon">${dept.icon}</div>
-        <h3 class="dept-card__name">${dept.name}</h3>
-        <p class="dept-card__desc">${deptDescriptions[dept.id] || ''}</p>
+        <div class="dept-card__icon">${area.icon}</div>
+        <h3 class="dept-card__name">${area.name}</h3>
+        <p class="dept-card__desc">${area.desc}</p>
       `;
       deptsGrid.appendChild(card);
     });
   }
 
-  /* —— Team Preview Grid (2025 members, first 8) —— */
+  /* —— Team Preview Grid (25-26 leadership) —— */
   const teamGrid = document.getElementById('team-grid');
   if (teamGrid) {
-    const members2025 = BISKY.getMembersByYear(2025).slice(0, 8);
-    members2025.forEach((member, i) => {
-      const initials = member.name.split(' ').map(w => w[0]).join('').slice(0, 2);
-      const latestRecord = member.history[member.history.length - 1];
-      const card = document.createElement('a');
-      card.href = `pages/member-profile.html?id=${member.id}`;
-      card.className = 'member-card reveal reveal-delay-' + Math.min(i + 1, 5);
-      card.innerHTML = `
-        <div class="member-card__avatar">${initials}</div>
-        <div class="member-card__name">${member.name}</div>
-        <div class="member-card__role">${BISKY.getPositionName(latestRecord.pos)}</div>
-      `;
-      teamGrid.appendChild(card);
-    });
+    const yearData = BISKY.getYearData('25-26');
+    if (yearData) {
+      // Show leadership + project managers
+      const previewMembers = [
+        ...yearData.leadership,
+        ...(yearData.projectManagers || []).slice(0, 6)
+      ];
+
+      previewMembers.forEach((member, i) => {
+        const initials = member.name.split(' ').map(w => w[0]).join('').slice(0, 2);
+        const photoPath = BISKY.getMemberPhoto(member.name, 'assets/members/');
+        const card = document.createElement('a');
+        card.href = `pages/member-profile.html?name=${encodeURIComponent(member.name)}&year=25-26`;
+        card.className = 'member-card reveal reveal-delay-' + Math.min(i + 1, 5);
+        
+        const avatarContent = photoPath 
+          ? `<img src="${photoPath}" alt="${member.name}" loading="lazy">` 
+          : initials;
+
+        const roleLabel = member.project 
+          ? `${BISKY.getPositionName(member.position)} — ${member.project}` 
+          : BISKY.getPositionName(member.position);
+
+        card.innerHTML = `
+          <div class="member-card__avatar">${avatarContent}</div>
+          <div class="member-card__name">${member.name}</div>
+          <div class="member-card__role">${roleLabel}</div>
+        `;
+        teamGrid.appendChild(card);
+      });
+    }
   }
 
   /* —— Sponsors Preview —— */
   const sponsorsLogos = document.getElementById('sponsors-logos');
   if (sponsorsLogos) {
-    // Show top-tier sponsors
     const topSponsors = BISKY.sponsors.list
-      .filter(s => ['cosmos', 'galaxy', 'nebula', 'star'].includes(s.tier))
-      .slice(0, 8);
+      .filter(s => ['cosmos', 'galaxy', 'nebula'].includes(s.tier))
+      .slice(0, 10);
 
     topSponsors.forEach(sponsor => {
       const el = document.createElement('div');
